@@ -39,5 +39,4 @@ class ScanListProvider extends ChangeNotifier {
     await DBProvider.db.deleteScan(id);
     loadScansByType(typeSelected);
   }
-
 }

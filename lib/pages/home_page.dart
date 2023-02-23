@@ -4,6 +4,7 @@ import 'package:qr_reader/pages/maps_page.dart';
 
 import 'package:provider/provider.dart';
 import 'package:qr_reader/providers/ui_provider.dart';
+import '../providers/scan_list_provider.dart';
 
 import '../widgets/custom_navigation_bar.dart';
 import '../widgets/scan_button.dart';
@@ -39,10 +40,16 @@ class _HomePageBody extends StatelessWidget {
 
     final currentIndex = uiProvider.selectedMenuOpt;
 
+    //* In this point I don't want to rebuild the whole page, so I set listen to false
+    final scanListProvider =
+        Provider.of<ScanListProvider>(context, listen: false);
+
     switch (currentIndex) {
       case 0:
+        scanListProvider.loadScansByType('geo');
         return const MapsPage();
       case 1:
+        scanListProvider.loadScansByType('http');
         return const DirectionsPage();
       default:
         return const MapsPage();
