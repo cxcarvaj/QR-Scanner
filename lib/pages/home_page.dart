@@ -13,13 +13,16 @@ class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final scanListProvider = Provider.of<ScanListProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('History'),
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_forever),
-            onPressed: () {},
+            onPressed: () {
+              scanListProvider.deleteAll();
+            },
           ),
         ],
       ),
