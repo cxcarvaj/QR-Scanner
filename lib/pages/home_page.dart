@@ -21,6 +21,9 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.delete_forever),
             onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                content: Text("All Scans deleted"),
+              ));
               scanListProvider.deleteAll();
             },
           ),
