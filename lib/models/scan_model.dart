@@ -3,7 +3,7 @@ import 'dart:convert';
 class ScanModel {
   ScanModel({
     required this.id,
-    required this.type,
+    this.type = '',
     required this.value,
   }) {
     if (this.value.contains('http')) {
