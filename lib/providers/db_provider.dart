@@ -27,7 +27,7 @@ class DBProvider {
 
     final path = '${documentsDirectory.path}/ScansDB.db';
 
-    // print(path);
+    print(path);
 
     // * Create the database
     return await openDatabase(path, version: 1, onOpen: (db) {},

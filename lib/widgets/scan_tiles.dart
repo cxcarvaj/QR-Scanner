@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import 'package:qr_reader/utils/utils.dart';
 import '../providers/scan_list_provider.dart';
 
 class ScanTiles extends StatelessWidget {
@@ -53,6 +54,7 @@ class ScanTiles extends StatelessWidget {
           trailing: const Icon(Icons.keyboard_arrow_right, color: Colors.grey),
           onTap: () {
             print(scans[index].id);
+            launchURL(context, scans[index]);
           },
         ),
       ),
