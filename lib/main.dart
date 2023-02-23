@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
           '/map': (_) => MapPage(),
         },
         theme: ThemeData(
+          primaryColor: Colors.deepPurple,
           colorScheme: const ColorScheme.light(
             primary: Colors.deepPurple,
           ),
