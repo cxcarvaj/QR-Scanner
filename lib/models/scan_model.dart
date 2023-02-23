@@ -2,7 +2,7 @@ import 'dart:convert';
 
 class ScanModel {
   ScanModel({
-    required this.id,
+    this.id = 0,
     this.type = '',
     required this.value,
   }) {

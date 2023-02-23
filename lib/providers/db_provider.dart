@@ -71,7 +71,7 @@ class DBProvider {
         : throw 'ID: $id not found';
   }
 
-  Future<ScanModel> getScanByType(String type) async {
+  Future<List<ScanModel>> getScansByType(String type) async {
     final db = await database;
     final res = await db.rawQuery(''' 
       SELECT * FROM Scans WHERE type = '$type'
@@ -79,8 +79,8 @@ class DBProvider {
       ''');
 
     return res.isNotEmpty
-        ? ScanModel.fromMap(res.first)
-        : throw 'Type: $type not found';
+        ? res.map((scan) => ScanModel.fromMap(scan)).toList()
+        : [];
   }
 
   Future<List<ScanModel>> getAllScans() async {
