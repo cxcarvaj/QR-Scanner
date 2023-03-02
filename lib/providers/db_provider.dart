@@ -6,12 +6,15 @@ import 'package:sqflite/sqflite.dart';
 import '../models/scan_model.dart';
 export '../models/scan_model.dart';
 
+// *Revisar DbProvider class
 class DBProvider {
+  //* This is from sqflite package
   static Database? _database;
 
+  //* This is an instance of the class (It's a singleton and a Private Constructor)
   static final DBProvider db = DBProvider._();
 
-  DBProvider._();
+  DBProvider._(); //* Private Constructor
 
   Future<Database> get database async {
     if (_database != null) return _database!;
